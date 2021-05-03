@@ -1,0 +1,40 @@
+﻿@using MvcLibrary.Models
+@model IEnumerable<ContentsItem>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        <a asp-area="" asp-controller="Books" asp-action="Index">Back to List</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChapterName)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChapterName)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
